@@ -1,0 +1,22 @@
+{
+  "name": "aaron",
+  "version": "1.0.0",
+  "description": "graphic design portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eujoao-maciel/aaron.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/eujoao-maciel/aaron/issues"
+  },
+  "homepage": "https://github.com/eujoao-maciel/aaron#readme",
+  "devDependencies": {
+    "@openai/codex": "^0.163.0"
+  }
+}
