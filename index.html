@@ -1,13 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaron Victor</title>
-    <link rel="stylesheet" href="css/tokens.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/elements.css">
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aaron Victor — designer gráfico e ilustrador. Narrativas visuais, identidade e tipografia."
+    />
+    <meta name="theme-color" content="#100f0d" />
+    <title>Aaron Victor — Design Gráfico & Ilustração</title>
+    <link rel="icon" href="assets/artwork/brand.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/elements.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <script src="scripts/navigation.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#home">Pular para o conteúdo</a>
+    <div class="portfolio texture-dark">
+      <svg
+        class="creases"
+        aria-hidden="true"
+        preserveAspectRatio="none"
+        viewBox="0 0 1200 800"
+      >
+        <g fill="none" stroke="currentColor">
+          <path
+            d="m10 0 8 145-9 61 20 82-10 131 9 193-8 188M407 0l-4 126 14 83-10 108 12 110-11 115 13 258M698 0l-30 56-18 62-44 69-21 89-20 44 7 78-29 68 6 110-29 72-9 152M1170 0l-9 175 10 114-9 112 8 146-6 253M0 740l170-3 128 9 105-17 124 9 107-25 154-5 158-18 254 12"
+          />
+          <path
+            opacity=".45"
+            d="m0 80 99 85 89 27 42 63M1012 0l-54 106 14 98-30 99M591 445l58 34 10 75-18 80-70 42M0 646l118-23 57 6 84-35"
+          />
+        </g>
+      </svg>
+      <header class="site-header page-shell">
+        <a class="brand" href="#home" aria-label="Aaron Victor — início"
+          ><img src="assets/artwork/brand.svg" alt="" width="64" height="64"
+        /></a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          <span></span><span></span>
+        </button>
+        <nav
+          class="navigation"
+          id="main-navigation"
+          aria-label="Navegação principal"
+        >
+          <a href="#home" aria-current="page">home</a>
+          <a href="#projetos">projetos</a>
+          <a href="#servicos">serviços</a>
+          <a href="#sobre">sobre</a>
+        </nav>
+      </header>
+      <main id="home" class="hero page-shell">
+        <!-- hero:start — gerado a partir de pages/herosection/hero.html -->
+        <div class="hero-copy">
+          <p class="type-label hero-eyebrow">Design Gráfico &amp; Ilustração</p>
+          <h1 class="type-display doodle-underline">Aaron Victor</h1>
+          <p class="hero-description">
+            Designer gráfico e ilustrador<br class="desktop-break" />
+            com foco em narrativas visuais,<br class="desktop-break" />
+            identidade e tipografia. Transformo<br class="desktop-break" />
+            ideias em composições que comunicam<br class="desktop-break" />
+            com propósito.
+          </p>
+          <ul class="specialties" aria-label="Especialidades">
+            <li>graphic design</li>
+            <li>ilustração</li>
+            <li>editorial</li>
+            <li>branding</li>
+          </ul>
+        </div>
+        <a class="projects-link" href="#projetos"
+          >ver projetos <span aria-hidden="true">⟶</span></a
+        >
+        <div class="hero-art" aria-label="Retrato de Aaron em uma colagem de papel">
+          <span class="paper-scrap" aria-hidden="true"></span>
+          <div class="photo-guide" aria-hidden="true"></div>
+          <figure class="portrait paper-surface paper-surface--rough">
+            <img
+              src="assets/images/aaron.jpg"
+              alt="Retrato de Aaron Victor"
+              width="1024"
+              height="1024"
+              fetchpriority="high"
+            /><span class="torn-edge" aria-hidden="true"></span>
+          </figure>
+          <span class="tape-mark" aria-hidden="true"></span>
+          <svg class="star-sketch" viewBox="0 0 150 150" aria-hidden="true">
+            <g
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+            >
+              <path
+                d="m72 77 9-70-2 64 38-59-32 64 56-27-54 34 57 13-60-7 31 51-39-47-10 54 4-57-57 25 52-33-49-48 54 42-14-65Z"
+              />
+              <path stroke-width="2" d="m77 80 56-58M77 81l-31 63M76 77 8 90" />
+            </g>
+          </svg>
+          <div class="handwritten" aria-hidden="true">
+            good<br />design<br />better<br />ideas<span></span>
+          </div>
+        </div>
+        <footer class="hero-footer">
+          <div class="socials" aria-label="Redes sociais">
+            <a href="https://www.instagram.com/" aria-label="Instagram"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                aria-hidden="true"
+              >
+                <rect x="4" y="4" width="16" height="16" rx="4" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" /></svg
+            ></a>
+            <a href="https://www.linkedin.com/" aria-label="LinkedIn"
+              ><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M4 3h16v18H4Zm3 6v9h2V9Zm1-4a1.3 1.3 0 1 0 0 2.6A1.3 1.3 0 0 0 8 5Zm3 4v9h2v-5c0-2 3-2 3 0v5h2v-6c0-4-4-4-5-2V9Z"
+                  fill-rule="evenodd"
+                /></svg
+            ></a>
+            <a href="https://github.com/" aria-label="GitHub"
+              ><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 3a9 9 0 0 0-2.8 17.6v-2.1c-2.5.5-3-1.1-3-1.1-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6.9.1 1.3.9 1.3.9.8 1.3 2 .9 2.6.7.1-.6.3-1 .6-1.2-2-.2-4.1-1-4.1-4.5 0-1 .3-1.8.9-2.4-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.5.9a9 9 0 0 1 4.6 0c1.7-1.2 2.5-.9 2.5-.9.5 1.3.2 2.2.1 2.5.6.6.9 1.4.9 2.4 0 3.5-2.1 4.3-4.1 4.5.3.3.6.8.6 1.6v3.1A9 9 0 0 0 12 3Z"
+                /></svg
+            ></a>
+          </div>
+          <span class="footer-rule" aria-hidden="true"></span>
+        </footer>
+        <!-- hero:end -->
+      </main>
+    </div>
+  </body>
 </html>
