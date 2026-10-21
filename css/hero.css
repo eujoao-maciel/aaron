@@ -637,7 +637,10 @@ button:focus-visible {
 .specialties li {
   position: relative;
   isolation: isolate;
-  transition: color 180ms ease, border-color 180ms ease, box-shadow 180ms ease,
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
     transform 220ms ease;
 }
 

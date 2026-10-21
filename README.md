@@ -25,7 +25,7 @@ Para adicionar um trabalho, inclua um objeto na lista:
   {
     "title": "Nome do projeto",
     "description": "Uma breve descrição do trabalho.",
-    "image": "assets/images/project-name.jpg",
+    "image": "assets/images/project-name.webp",
     "imageAlt": "Descrição da imagem do projeto",
     "url": "https://example.com/project"
   }

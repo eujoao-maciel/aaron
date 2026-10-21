@@ -2,22 +2,22 @@
   {
     "title": "Portfólio Pessoal",
     "description": "Exemplo fictício de portfólio com direção de arte editorial e composição em colagem.",
-    "image": "assets/artwork/portfolio-example.svg",
+    "image": "assets/artwork/portfolio-example.webp",
     "imageAlt": "Capa ilustrada de portfólio, com tipografia bege, retrato e detalhes vermelhos.",
-    "url": "assets/artwork/portfolio-example.svg"
+    "url": "assets/artwork/portfolio-example.webp"
   },
   {
     "title": "Inside Out",
     "description": "Exemplo fictício de projeto editorial que explora fotografia, colagem e narrativa visual.",
-    "image": "assets/artwork/inside-out-example.svg",
+    "image": "assets/artwork/inside-out-example.webp",
     "imageAlt": "Colagem editorial com título Inside Out, recortes de papel e fotografia ilustrada.",
-    "url": "assets/artwork/inside-out-example.svg"
+    "url": "assets/artwork/inside-out-example.webp"
   },
   {
     "title": "Hamnet",
     "description": "Exemplo fictício de identidade visual para uma narrativa sobre memória e ausência.",
-    "image": "assets/artwork/hamnet-example.svg",
+    "image": "assets/artwork/hamnet-example.webp",
     "imageAlt": "Capa conceitual Hamnet em preto e bege, com estrela desenhada e paisagem ilustrada.",
-    "url": "assets/artwork/hamnet-example.svg"
+    "url": "assets/artwork/hamnet-example.webp"
   }
 ]
