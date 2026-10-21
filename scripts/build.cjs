@@ -1,17 +1,85 @@
-const fs = require('node:fs');
-const path = require('node:path');
+const fs = require("node:fs");
+const path = require("node:path");
 
-// Mantém a seção em pages/ e publica HTML estático, sem fetch no navegador.
-const root = path.resolve(__dirname, '..');
-const entryPath = path.join(root, 'index.html');
-const hero = fs.readFileSync(path.join(root, 'pages/herosection/hero.html'), 'utf8');
-const entry = fs.readFileSync(entryPath, 'utf8');
-const marker = /(<!-- hero:start[^\n]*-->\n)[\s\S]*?(        <!-- hero:end -->)/;
+// Monta as seções no HTML de entrada, sem carregamento no navegador.
+const root = path.resolve(__dirname, "..");
+const entryPath = path.join(root, "index.html");
+const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
+const escapeHtml = (value) =>
+  String(value).replace(
+    /[&<>"']/g,
+    (character) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[character],
+  );
 
-if (!marker.test(entry)) {
-    throw new Error('Os marcadores da hero não foram encontrados no index.html.');
+function safeUrl(value) {
+  if (
+    typeof value !== "string" ||
+    !value.trim() ||
+    (/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(value) && !/^https?:\/\//i.test(value))
+  ) {
+    throw new Error(
+      "Use um caminho relativo ou uma URL HTTP(S) para os projetos.",
+    );
+  }
+  return escapeHtml(value);
 }
 
-const content = hero.trimEnd().split('\n').map(line => `        ${line}`).join('\n');
-fs.writeFileSync(entryPath, entry.replace(marker, (_, start, end) => `${start}${content}\n${end}`));
-console.log('index.html atualizado com pages/herosection/hero.html.');
+function renderProject(project, index) {
+  for (const field of ["title", "description", "image", "imageAlt", "url"]) {
+    if (typeof project[field] !== "string" || !project[field].trim()) {
+      throw new Error(`Projeto ${index + 1}: preencha o campo ${field}.`);
+    }
+  }
+  const title = escapeHtml(project.title);
+  const url = safeUrl(project.url);
+  return `<article class="project-card">
+  <a class="project-cover paper-surface--rough" href="${url}" aria-label="Ver projeto: ${title}">
+    <img src="${safeUrl(project.image)}" alt="${escapeHtml(project.imageAlt)}" loading="lazy" width="640" height="474">
+  </a>
+  <div class="project-caption">
+    <span class="project-number">${String(index + 1).padStart(2, "0")}.</span>
+    <h3 class="project-title">${title}</h3>
+    <p class="project-description">${escapeHtml(project.description)}</p>
+    <a class="project-link" href="${url}" aria-label="Ver projeto: ${title}">ver projeto →</a>
+  </div>
+</article>`;
+}
+
+const projects = JSON.parse(read("pages/projects/projects.json"));
+if (!Array.isArray(projects))
+  throw new Error("projects.json deve conter uma lista de projetos.");
+const sections = {
+  hero: read("pages/herosection/hero.html"),
+  projects: read("pages/projects/projects.html").replace(
+    "<!-- project-cards -->",
+    projects.map(renderProject).join("\n"),
+  ),
+};
+let entry = read("index.html");
+for (const [name, html] of Object.entries(sections)) {
+  const marker = new RegExp(
+    `(<!-- ${name}:start[^\\n]*-->\\n)[\\s\\S]*?(        <!-- ${name}:end -->)`,
+  );
+  if (!marker.test(entry))
+    throw new Error(`Marcadores de ${name} ausentes no index.html.`);
+  const content = html
+    .trimEnd()
+    .split("\n")
+    .map((line) => `        ${line}`)
+    .join("\n");
+  entry = entry.replace(
+    marker,
+    (_, start, end) => `${start}${content}\n${end}`,
+  );
+}
+fs.writeFileSync(entryPath, entry);
+console.log(
+  `index.html atualizado: hero e projetos (${projects.length} cadastrados).`,
+);
