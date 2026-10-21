@@ -1,24 +1,46 @@
-# aaron
-graphic design portfolio
+# Aaron Victor — Portfólio
 
-## Hero section
+Portfólio de design gráfico e ilustração desenvolvido com **HTML, CSS e JavaScript puros**. A landing page reúne apresentação, projetos, serviços e contato, com navegação por âncoras e layouts para desktop, tablet e celular.
 
-Edite o conteúdo em `pages/herosection/hero.html` e execute `npm run build`
-para atualizar o `index.html`. O resultado é HTML estático e pode ser aberto
-diretamente no navegador, sem servidor e sem carregamento via JavaScript.
-Os estilos ficam em `css/hero.css` e o menu em `scripts/navigation.js`.
+A identidade visual combina fundos texturizados, papel bege, colagens, tipografia editorial e detalhes vermelhos.
 
-## Projetos
+## Como visualizar
 
-A seção faz parte da mesma landing page, na âncora `#projetos`.
+Abra o `index.html` diretamente no navegador ou use um servidor local, como o Live Server.
 
-- Estrutura: `pages/projects/projects.html`.
-- Cadastro dos trabalhos: `pages/projects/projects.json`.
-- Estilos: `css/projects.css`.
-- Geração do HTML estático: `npm run build`.
+Para atualizar a página após editar as seções, tenha **Node.js e npm** instalados e execute na raiz do projeto:
 
-O cadastro começa com `[]`, mantendo a área de trabalhos vazia.
-Para adicionar um trabalho, inclua um objeto na lista:
+```bash
+npm run build
+```
+
+O build usa apenas recursos nativos do Node.js. Ele reúne os arquivos de `pages/` no `index.html`, gerando uma página estática que não depende de carregamento de HTML via JavaScript.
+
+## Onde editar
+
+| Conteúdo | Arquivo principal | Estilos |
+| --- | --- | --- |
+| Apresentação | `pages/herosection/hero.html` | `css/hero.css` |
+| Projetos | `pages/projects/projects.html` | `css/projects.css` |
+| Serviços | `pages/services/services.html` | `css/services.css` |
+| Sobre e contato | `pages/about/about.html` | `css/about.css` |
+
+Outros arquivos importantes:
+
+- `pages/projects/projects.json`: cadastro dos projetos.
+- `css/tokens.css`: cores, fontes e espaçamentos compartilhados.
+- `css/base.css` e `css/elements.css`: estilos base e elementos reutilizáveis.
+- `css/navigation.css`: navegação, ícones sociais e botão flutuante.
+- `scripts/navigation.js`: menu mobile e destaque da seção ativa.
+- `scripts/contact.js`: preparação da mensagem para o WhatsApp.
+- `scripts/build.cjs`: montagem do HTML final.
+- `assets/`: imagens, desenhos e fontes locais.
+
+**Edite as seções em `pages/` e execute o build.** Alterações feitas diretamente nas seções geradas dentro do `index.html` serão substituídas. O cabeçalho e o botão flutuante ficam no próprio `index.html`.
+
+## Adicionar projetos
+
+O cadastro contém três projetos fictícios para demonstrar o layout. Substitua os exemplos ou adicione novos objetos em `pages/projects/projects.json`:
 
 ```json
 [
@@ -32,30 +54,34 @@ Para adicionar um trabalho, inclua um objeto na lista:
 ]
 ```
 
-Os caminhos de imagem são relativos ao `index.html`. Substitua os dados do
-exemplo por um trabalho real e execute `npm run build` antes de publicar.
-A numeração é automática. A grade usa três colunas acima de 1050px,
-duas entre 701px e 1050px e uma até 700px.
+Todos os campos são obrigatórios. O caminho da imagem é relativo ao `index.html`, e `url` define o destino do botão “ver projeto”. A numeração é automática.
 
-## Serviços
+Após salvar, execute `npm run build`. Para deixar a área vazia, use `[]` no cadastro.
 
-Edite os três serviços em `pages/services/services.html` e a apresentação em
-`css/services.css`. Execute `npm run build` para atualizar o HTML de entrada.
-A seção usa a âncora `#servicos`: três cartões no desktop, dois por linha
-com o último centralizado no tablet (701–1050px), e uma coluna no celular.
+## Configurar o WhatsApp
 
-## Sobre e contato
+O formulário solicita **nome, assunto e mensagem**. Ao enviar, abre o WhatsApp com o texto preenchido; a pessoa confirma o envio na conversa. Não há servidor de mensagens nem armazenamento dos dados.
 
-A composição “Vamos nos conectar?” fica em `pages/about/about.html`, com
-estilos em `css/about.css` e comportamento em `scripts/contact.js`.
-O menu aponta para `#sobre`; `#contato` leva ao formulário.
+Para trocar o número, atualize os dois pontos:
 
-Para habilitar o contato pelo WhatsApp, preencha `data-whatsapp=""`
-no formulário de `pages/about/about.html` com país + DDD + número,
-usando apenas dígitos (sem `+`, espaços ou pontuação).
-Depois execute `npm run build`.
+1. O atributo `data-whatsapp` em `pages/about/about.html`.
+2. O endereço `https://wa.me/…` do botão flutuante no `index.html`.
 
-O botão abre o WhatsApp com nome, assunto e mensagem preenchidos.
-A pessoa confirma o envio no WhatsApp. Enquanto o número estiver vazio,
-o formulário informa que o contato estará disponível em breve.
-Não existe envio para servidor nem armazenamento das mensagens.
+Use **país + DDD + número**, somente com dígitos, sem `+`, espaços ou pontuação. Depois execute `npm run build`.
+
+Se `data-whatsapp` estiver vazio, o formulário informa que o contato estará disponível em breve.
+
+## Atualizar redes sociais
+
+Os links do Instagram e do 99Freelas ficam em `pages/herosection/hero.html`. Edite os endereços e execute o build para aplicar a alteração.
+
+## Padrões do projeto
+
+- Manter as seções na mesma landing page: `#home`, `#projetos`, `#servicos` e `#sobre`. A âncora `#contato` leva ao formulário.
+- Separar estrutura em `pages/`, apresentação em `css/` e comportamento em `scripts/`.
+- Reutilizar os tokens e elementos existentes antes de criar novos estilos.
+- Usar nomes de arquivos em inglês e kebab-case.
+- Preferir WebP para fotos e capas; preservar SVG para logos e ícones vetoriais.
+- Carregar fontes locais somente quando os arquivos estiverem em `assets/fonts/`.
+
+As diretrizes completas estão em [AGENTS.md](AGENTS.md).
