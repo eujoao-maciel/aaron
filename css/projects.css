@@ -1,20 +1,11 @@
 /* Seção vermelha: a grade permanece vazia até existirem projetos cadastrados. */
 .projects {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: 100svh;
   margin-top: 0;
-  border-top: var(--border-thin);
-  background-color: var(--color-red-dark);
   scroll-margin-top: 0;
-}
-.projects::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  opacity: 0.25;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23100f0d' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
-  mix-blend-mode: multiply;
-  pointer-events: none;
 }
 .projects-doodles {
   position: absolute;
@@ -23,6 +14,13 @@
   height: 100%;
   color: var(--color-paper-muted);
   opacity: 0.7;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 8%,
+    #000 82%,
+    transparent
+  );
   pointer-events: none;
 }
 .projects-inner {
@@ -141,8 +139,11 @@
   font-size: 11px;
   font-weight: bold;
   text-decoration: none;
-  transition: background-color 180ms ease, color 180ms ease,
-    box-shadow 180ms ease, transform 180ms ease;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 .project-link:is(:hover, :focus-visible) {
   color: var(--color-paper-light);
@@ -159,8 +160,12 @@
   box-shadow: 1px 1px 0 var(--color-ink);
 }
 @media (prefers-reduced-motion: reduce) {
-  .project-link { transition: none; }
-  .project-link:is(:hover, :focus-visible, :active) { transform: none; }
+  .project-link {
+    transition: none;
+  }
+  .project-link:is(:hover, :focus-visible, :active) {
+    transform: none;
+  }
 }
 .project-cover:focus-visible {
   outline: 2px solid var(--color-paper);

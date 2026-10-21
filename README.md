@@ -36,3 +36,10 @@ Os caminhos de imagem são relativos ao `index.html`. Substitua os dados do
 exemplo por um trabalho real e execute `npm run build` antes de publicar.
 A numeração é automática. A grade usa três colunas acima de 1050px,
 duas entre 701px e 1050px e uma até 700px.
+
+## Serviços
+
+Edite os três serviços em `pages/services/services.html` e a apresentação em
+`css/services.css`. Execute `npm run build` para atualizar o HTML de entrada.
+A seção usa a âncora `#servicos`: três cartões no desktop, dois por linha
+com o último centralizado no tablet (701–1050px), e uma coluna no celular.

@@ -1,0 +1,249 @@
+/* Papéis e desenhos seguem a linguagem de colagem das outras seções. */
+.services {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: min(100svh, 900px);
+}
+.services-doodles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--color-paper-muted);
+  opacity: 0.8;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 12%,
+    #000 85%,
+    transparent
+  );
+  pointer-events: none;
+}
+.services-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+  padding-block: 75px 24px;
+}
+.services-heading {
+  align-self: center;
+  text-align: center;
+  margin-bottom: 55px;
+}
+.services-eyebrow {
+  margin: 0 0 8px;
+  font: italic 25px var(--font-display);
+}
+.services-heading h2 {
+  font-size: clamp(60px, 7vw, 100px);
+  letter-spacing: -0.045em;
+}
+.services-underline {
+  display: block;
+  width: 90%;
+  height: 25px;
+  margin: 4px auto 0;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(30px, 5vw, 75px);
+  padding: 0 2% 65px;
+}
+.service-card {
+  position: relative;
+  min-width: 0;
+  transform: rotate(-5deg);
+}
+.service-paper {
+  min-height: 300px;
+  padding: 35px 22px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23n)' opacity='.18' d='M0 0h100v100H0z'/%3E%3C/svg%3E");
+}
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 9px -9px -8px 10px;
+  border: 1px solid var(--color-paper-muted);
+  transform: rotate(5deg);
+  opacity: 0.8;
+}
+.service-icon {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  margin-bottom: 14px;
+}
+.service-paper h3 {
+  margin: 0;
+  padding-bottom: 10px;
+  font: italic clamp(25px, 2.5vw, 36px)/1.1 var(--font-display);
+  border-bottom: 1px solid var(--color-red-dark);
+}
+.service-paper p {
+  max-width: 250px;
+  margin: 18px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.service-card--editorial {
+  padding: 9px;
+  background: var(--color-paper-muted);
+  clip-path: polygon(
+    2% 1%,
+    98% 0,
+    99% 24%,
+    98% 51%,
+    100% 98%,
+    66% 99%,
+    35% 98%,
+    0 100%,
+    1% 65%,
+    0 29%
+  );
+  transform: rotate(2deg);
+}
+.service-card--editorial .service-paper {
+  min-height: 302px;
+  color: var(--color-paper);
+  background-color: var(--color-ink);
+}
+.service-card--editorial h3 {
+  border-color: var(--color-paper-muted);
+}
+.service-card--editorial p {
+  color: var(--color-paper-muted);
+}
+.service-card--art {
+  transform: rotate(-3deg);
+}
+.service-card .tape-mark {
+  top: -12px;
+  left: 1%;
+  width: 48%;
+  height: 34px;
+  transform: rotate(-12deg);
+  background-image: repeating-linear-gradient(
+    35deg,
+    transparent 0 5px,
+    #46060644 6px,
+    transparent 7px 12px
+  );
+  clip-path: polygon(1% 0, 99% 3%, 96% 93%, 75% 100%, 51% 93%, 24% 100%, 0 94%);
+}
+.service-card--art .tape-mark {
+  left: auto;
+  right: 0;
+  transform: rotate(14deg);
+}
+.service-burst {
+  position: absolute;
+  z-index: 3;
+  width: 100px;
+  bottom: -38px;
+  right: -39px;
+  color: var(--color-red);
+  pointer-events: none;
+}
+.services-footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: var(--border-thin);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: var(--color-paper-muted);
+  font-size: 10px;
+}
+.services-footer a {
+  text-decoration: none;
+}
+.services-footer a:hover {
+  color: var(--color-paper-light);
+}
+.services-footer a span {
+  display: inline-block;
+  margin-left: 10px;
+}
+/* Tablet: dois cartões e o terceiro centralizado na linha seguinte. */
+@media (min-width: 701px) and (max-width: 1050px) {
+  .services-inner {
+    padding-top: 60px;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px 40px;
+    max-width: 760px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .service-card--art {
+    grid-column: 1 / -1;
+    width: calc((100% - 40px) / 2);
+    justify-self: center;
+  }
+  .service-paper h3 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 700px) {
+  .services-inner {
+    padding-block: 50px 22px;
+  }
+  .services-heading {
+    margin-bottom: 42px;
+    width: 100%;
+  }
+  .services-heading h2 {
+    font-size: clamp(35px, 8.8vw, 60px);
+  }
+  .services-eyebrow {
+    font-size: 18px;
+  }
+  .services-underline {
+    width: 85%;
+  }
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(85%, 330px);
+    margin-inline: auto;
+    padding: 0 0 55px;
+    gap: 38px;
+  }
+  .service-paper {
+    min-height: 260px;
+    padding: 30px 23px;
+  }
+  .service-card--editorial .service-paper {
+    min-height: 260px;
+  }
+  .service-paper h3 {
+    font-size: 30px;
+  }
+  .service-paper p {
+    font-size: 12px;
+  }
+  .service-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .service-burst {
+    width: 80px;
+    right: -31px;
+    bottom: -30px;
+  }
+  .services-footer {
+    font-size: 9px;
+  }
+}

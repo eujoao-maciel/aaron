@@ -1,104 +1,116 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    min-width: 320px;
-    scroll-behavior: smooth;
-    background: var(--color-ink);
+  min-width: 320px;
+  scroll-behavior: smooth;
+  background: var(--color-ink);
 }
 
 body {
-    min-height: 100vh;
-    margin: 0;
-    color: var(--color-text);
-    background-color: var(--color-ink);
-    font-family: var(--font-body);
-    font-size: var(--text-sm);
-    line-height: 1.5;
-    text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 img,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 button,
 input,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 a {
-    color: inherit;
+  color: inherit;
 }
 
 ::selection {
-    color: var(--color-paper-light);
-    background: var(--color-red-dark);
+  color: var(--color-paper-light);
+  background: var(--color-red-dark);
 }
 
 .page-shell {
-    width: min(100% - 2rem, var(--content-width));
-    margin-inline: auto;
+  width: min(100% - 2rem, var(--content-width));
+  margin-inline: auto;
 }
 
 .type-display {
-    margin: 0;
-    color: var(--color-paper);
-    font-family: var(--font-display);
-    font-size: var(--text-display);
-    font-style: italic;
-    font-weight: 400;
-    line-height: 0.9;
+  margin: 0;
+  color: var(--color-paper);
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.9;
 }
 
 .type-label {
-    color: var(--color-text-muted);
-    font-family: var(--font-body);
-    font-size: var(--text-xs);
-    letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
 }
 
 .texture-dark,
 .texture-red {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
 
 .texture-dark {
-    background-color: var(--color-ink);
-    background-image:
-        radial-gradient(ellipse at 20% 18%, rgb(255 255 255 / 5%), transparent 36%),
-        radial-gradient(ellipse at 78% 82%, rgb(255 255 255 / 3%), transparent 42%);
+  background-color: var(--color-ink);
+  background-image:
+    radial-gradient(ellipse at 20% 18%, rgb(255 255 255 / 5%), transparent 36%),
+    radial-gradient(ellipse at 78% 82%, rgb(255 255 255 / 3%), transparent 42%);
 }
 
 .texture-red {
-    background-color: var(--color-red-dark);
-    background-image:
-        radial-gradient(ellipse at 25% 20%, rgb(220 28 27 / 40%), transparent 45%),
-        radial-gradient(ellipse at 80% 75%, rgb(38 0 0 / 28%), transparent 50%);
+  background-color: var(--color-red-dark);
+  background-image:
+    radial-gradient(ellipse at 25% 20%, rgb(220 28 27 / 40%), transparent 45%),
+    radial-gradient(ellipse at 80% 75%, rgb(38 0 0 / 28%), transparent 50%);
 }
 
 .texture-dark::after,
 .texture-red::after {
-    position: absolute;
-    z-index: -1;
-    pointer-events: none;
-    content: "";
-    inset: 0;
-    opacity: 0.17;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  inset: 0;
+  opacity: 0.17;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
 }
 
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Projetos e serviços compartilham o mesmo pigmento, luz e textura. */
+.red-stage::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.24;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23100f0d' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
 }
