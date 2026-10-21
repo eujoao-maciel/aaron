@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="css/hero.css" />
     <link rel="stylesheet" href="css/projects.css" />
     <link rel="stylesheet" href="css/services.css" />
+    <link rel="stylesheet" href="css/about.css" />
     <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/contact.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#home">Pular para o conteúdo</a>
@@ -460,6 +462,117 @@
           </section>
           <!-- services:end -->
         </div>
+        <!-- about:start — gerado a partir de pages/about/about.html -->
+        <section
+          class="about texture-dark"
+          id="sobre"
+          aria-labelledby="about-title"
+        >
+          <svg
+            class="about-doodles"
+            viewBox="0 0 1200 740"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <g fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="m135 157 43-121-15 115 86-131-65 139 91-37-86 53 40 75-61-61-51 93 29-102-110 29 104-52-49-60Z"
+              />
+              <path
+                d="M123 330c359-54 418-14 194 8-178 18-340 37-263 5 35-14 80-5 46 3M687 220c-76-93 361-135 441-53s-85 148-97 121M1180 460C948 493 459 579 519 622c44 31 303 16 357-2"
+              />
+              <path
+                d="m52 543 68 57 67-41-26 78 44 64-81-20-66 51 7-85-56-37 65-13Z"
+              />
+              <path
+                opacity=".25"
+                d="m22 0 12 189-9 148 14 212-8 191M602 0l-9 153 17 159-9 221 14 207M1153 0l-18 239 20 174-24 327"
+              />
+            </g>
+          </svg>
+          <div class="about-inner page-shell">
+            <div class="about-copy">
+              <header class="about-heading">
+                <p class="about-eyebrow">vamos nos</p>
+                <h2 class="type-display" id="about-title">Conectar?</h2>
+                <svg
+                  class="about-underline"
+                  viewBox="0 0 500 30"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 15C198-1 492 3 478 12c-15 10-243 7-225 1 17-6 98 7 80 11-28 6-194-2-213-2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </header>
+              <p class="about-description">
+                Me envie uma mensagem, um projeto,<br class="about-break" />
+                uma ideia maluca ou só um oi.<br class="about-break" />
+                Será um prazer falar com você.
+              </p>
+              <a class="about-contact" href="#contact-name"
+                >contate-me <span aria-hidden="true">⟶</span></a
+              >
+            </div>
+
+            <div class="contact-collage" id="contato">
+              <span class="tape-mark" aria-hidden="true"></span>
+              <form
+                class="contact-form paper-surface paper-surface--rough"
+                data-whatsapp=""
+                aria-label="Enviar mensagem para Aaron"
+              >
+                <div class="contact-field">
+                  <label for="contact-name">nome</label>
+                  <input
+                    id="contact-name"
+                    name="name"
+                    autocomplete="name"
+                    maxlength="120"
+                    required
+                  />
+                </div>
+                <div class="contact-field">
+                  <label for="contact-subject">assunto</label>
+                  <input
+                    id="contact-subject"
+                    name="subject"
+                    maxlength="180"
+                    required
+                  />
+                </div>
+                <div class="contact-field contact-field--message">
+                  <label for="contact-message">mensagem</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="5"
+                    maxlength="5000"
+                    required
+                  ></textarea>
+                </div>
+                <button class="contact-submit" type="submit">
+                  enviar mensagem <span aria-hidden="true">⟶</span>
+                </button>
+                <p class="contact-status" role="status" aria-live="polite"></p>
+                <noscript
+                  >Ative o JavaScript para preparar sua mensagem no
+                  WhatsApp.</noscript
+                >
+              </form>
+              <span class="contact-paper-scrap" aria-hidden="true"></span>
+            </div>
+            <footer class="about-footer">
+              <span>Aaron Victor <span aria-hidden="true">©</span></span
+              ><a href="#home">voltar ao topo ↑</a>
+            </footer>
+          </div>
+        </section>
+        <!-- about:end -->
       </main>
     </div>
   </body>

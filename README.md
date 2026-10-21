@@ -43,3 +43,19 @@ Edite os três serviços em `pages/services/services.html` e a apresentação em
 `css/services.css`. Execute `npm run build` para atualizar o HTML de entrada.
 A seção usa a âncora `#servicos`: três cartões no desktop, dois por linha
 com o último centralizado no tablet (701–1050px), e uma coluna no celular.
+
+## Sobre e contato
+
+A composição “Vamos nos conectar?” fica em `pages/about/about.html`, com
+estilos em `css/about.css` e comportamento em `scripts/contact.js`.
+O menu aponta para `#sobre`; `#contato` leva ao formulário.
+
+Para habilitar o contato pelo WhatsApp, preencha `data-whatsapp=""`
+no formulário de `pages/about/about.html` com país + DDD + número,
+usando apenas dígitos (sem `+`, espaços ou pontuação).
+Depois execute `npm run build`.
+
+O botão abre o WhatsApp com nome, assunto e mensagem preenchidos.
+A pessoa confirma o envio no WhatsApp. Enquanto o número estiver vazio,
+o formulário informa que o contato estará disponível em breve.
+Não existe envio para servidor nem armazenamento das mensagens.

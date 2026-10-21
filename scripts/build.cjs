@@ -56,6 +56,7 @@ const projects = JSON.parse(read("pages/projects/projects.json"));
 if (!Array.isArray(projects))
   throw new Error("projects.json deve conter uma lista de projetos.");
 const sections = {
+  about: read("pages/about/about.html"),
   services: read("pages/services/services.html"),
   hero: read("pages/herosection/hero.html"),
   projects: read("pages/projects/projects.html").replace(
@@ -82,5 +83,5 @@ for (const [name, html] of Object.entries(sections)) {
 }
 fs.writeFileSync(entryPath, entry);
 console.log(
-  `index.html atualizado: hero, projetos (${projects.length} cadastrados) e serviços.`,
+  `index.html atualizado: hero, projetos (${projects.length} cadastrados) serviços e sobre.`,
 );
