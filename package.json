@@ -2,7 +2,7 @@
   "name": "aaron",
   "version": "1.0.0",
   "description": "graphic design portfolio",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node scripts/build.cjs"

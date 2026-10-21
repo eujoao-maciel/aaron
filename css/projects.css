@@ -1,4 +1,4 @@
-/* Seção vermelha: a grade permanece vazia até existirem projetos cadastrados. */
+/* Seção vermelha de projetos. */
 .projects {
   position: relative;
   isolation: isolate;
@@ -32,10 +32,10 @@
 }
 .projects-heading {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 70px;
-  padding-inline: 5%;
+  gap: 18px;
+  text-align: center;
 }
 .projects-title-wrap {
   position: relative;
@@ -49,15 +49,14 @@
   letter-spacing: -0.04em;
 }
 .projects-underline {
+  display: block;
   width: 110%;
   height: 30px;
-  margin-top: -1px;
+  margin: -1px auto 0;
 }
 .projects-intro {
-  max-width: 250px;
-  margin: 10px 7% 0 0;
-  padding-left: 26px;
-  border-left: var(--border-thin);
+  max-width: 380px;
+  margin: 0;
   color: var(--color-paper-muted);
   font-size: 12px;
   line-height: 1.5;
@@ -68,6 +67,21 @@
   gap: 48px;
   padding-block: 50px 65px;
   min-height: 380px;
+}
+/* Com três projetos, repetir a quebra e a centralização dos serviços. */
+@media (min-width: 701px) {
+  .projects-grid:has(> .project-card:nth-child(3):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 760px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .projects-grid:has(> .project-card:nth-child(3):last-child)
+    > .project-card:last-child {
+    grid-column: 1 / -1;
+    width: calc((100% - 48px) / 2);
+    justify-self: center;
+  }
 }
 .project-card {
   min-width: 0;
@@ -213,17 +227,19 @@
     padding-top: 65px;
   }
   .projects-heading {
-    gap: 35px;
-    padding-inline: 2%;
+    gap: 18px;
   }
   .projects-intro {
-    margin-right: 0;
-    max-width: 230px;
+    max-width: 380px;
   }
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 42px 32px;
     min-height: 410px;
+  }
+  .projects-grid:has(> .project-card:nth-child(3):last-child)
+    > .project-card:last-child {
+    width: calc((100% - 32px) / 2);
   }
 }
 @media (max-width: 700px) {
@@ -231,10 +247,7 @@
     padding-block: 55px 22px;
   }
   .projects-heading {
-    padding-inline: 8%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 22px;
+    gap: 18px;
   }
   .projects-eyebrow {
     font-size: 17px;
@@ -244,8 +257,6 @@
   }
   .projects-intro {
     max-width: 255px;
-    margin: 0;
-    padding-left: 13px;
     font-size: 10px;
   }
   .projects-grid {
