@@ -1,10 +1,10 @@
 [
   {
-    "title": "Portfólio Pessoal",
-    "description": "Exemplo fictício de portfólio com direção de arte editorial e composição em colagem.",
-    "image": "assets/artwork/portfolio-example.webp",
-    "imageAlt": "Capa ilustrada de portfólio, com tipografia bege, retrato e detalhes vermelhos.",
-    "url": "assets/artwork/portfolio-example.webp"
+    "title": "Sorteio de Calçado Esportivo Umbro",
+    "description": "Arte promocional para rifa de um calçado esportivo Umbro NEO-comfort (N40), desenvolvida com composição gráfica, tipografia expressiva e paleta contrastante em preto, branco e verde neon.",
+    "image": "assets/artwork/umbro-raffle.webp",
+    "imageAlt": "Arte promocional de sorteio de um calçado Umbro preto e amarelo, com detalhes em verde neon e informações sobre a rifa.",
+    "url": "assets/artwork/umbro-raffle.webp"
   },
   {
     "title": "Inside Out",
